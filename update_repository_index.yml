@@ -1,0 +1,18 @@
+---
+- hosts: ubuntu_servers
+  become: true
+  tasks:
+    - name: Update apt repository
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      tags:
+        - update
+      # This task updates the apt repository cache
+
+    - name: Perform full upgrade
+      ansible.builtin.apt:
+        upgrade: full
+      tags:
+        - upgrade
+      # This task performs a full upgrade of all packages
