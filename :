@@ -10,15 +10,3 @@
 [all:children]
 ubuntu_servers
 fedora_servers
-
-[ans_ubuntu]
-192.168.2.151
-
-[ans_ubuntu2]
-192.168.2.152
-
-[ai_server]
-192.168.2.140
-
-[dev_server]
-192.168.2.188
