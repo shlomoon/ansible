@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: install updates and upgrades for Fedora
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == "Fedora"
+
+    - name: install updates and upgrades for Ubuntu
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: install updates and upgrades for Rocky Linux
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == "Rocky"
+
+    - name: install updates and upgrades for Pop!_OS
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: yes
+      when: ansible_distribution == "Pop!_OS"

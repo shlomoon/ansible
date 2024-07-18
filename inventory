@@ -3,22 +3,33 @@
 192.168.2.152
 192.168.2.188
 192.168.2.140
+192.168.2.102
+192.168.2.103
+192.168.2.117
 
 [fedora_servers]
 192.168.2.157
 
+[rocky_servers]
+192.168.2.110
+192.168.2.115
+192.168.2.178
+
 [all:children]
 ubuntu_servers
 fedora_servers
+rocky_servers
 
-[ans_ubuntu]
-192.168.2.151
-
-[ans_ubuntu2]
-192.168.2.152
-
-[ai_server]
+[dev_popos]
 192.168.2.140
 
-[dev_server]
+[dev_ubuntu]
 192.168.2.188
+
+[web]
+192.168.2.110
+192.168.2.115
+
+[db]
+192.168.2.178
+
