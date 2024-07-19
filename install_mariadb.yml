@@ -1,0 +1,30 @@
+---
+- name: MariaDB
+  hosts: db_server
+  gather_facts: true
+  become: true
+  vars:
+    mysql_root_password: 751808
+  tasks:
+
+  - name: update repository index
+    ansible.builtin.apt:
+      update_cache: yes
+
+  - name: install security updates
+    ansible.builtin.apt:
+      upgrade: dist
+      update_cache: yes
+
+  - name: install mariadb package
+    ansible.builtin.apt:
+      name:
+        - mariadb-server
+        - python3-pymysql
+      state: latest
+
+  - name: start mariadb
+    service:
+      name: mariadb
+      enabled: true
+      state: started
