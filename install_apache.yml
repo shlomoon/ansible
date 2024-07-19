@@ -10,8 +10,7 @@
 
   - name: install security updates
     ansible.builtin.apt:
-      upgrade: dist
-      update_cache: yes
+      upgrade: yes
 
   - name: install apache2 package
     ansible.builtin.apt:
@@ -25,12 +24,11 @@
 
   - name: perform full upgrade
     ansible.builtin.apt:
-      upgrade: yes
-      update_cache: yes
+      upgrade: dist
 
   - name: copy html file for site
     ansible.builtin.copy:
-      src: index.htm
+      src: files/index.html
       dest: /var/www/html/index.html
       owner: root
       group: root
@@ -38,7 +36,7 @@
 
   - name: copy css file for site
     ansible.builtin.copy:
-      src: styles.css
+      src: files/styles.css
       dest: /var/www/html/styles.css
       owner: root
       group: root
