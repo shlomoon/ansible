@@ -27,3 +27,10 @@
         upgrade: dist
         update_cache: yes
       when: ansible_distribution == "Pop!_OS"
+
+    - name: install updates and upgrades for Red Hat
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == "RedHat"

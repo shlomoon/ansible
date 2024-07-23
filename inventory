@@ -10,6 +10,14 @@
 [fedora_servers]
 192.168.2.157
 
+[redhat_servers]
+192.168.2.100
+192.168.2.176
+192.168.2.119
+192.168.2.104
+192.168.2.186
+192.168.2.105
+
 [rocky_servers]
 192.168.2.110
 192.168.2.115
@@ -19,6 +27,7 @@
 ubuntu_servers
 fedora_servers
 rocky_servers
+redhat_servers
 
 [dev_popos]
 192.168.2.140
